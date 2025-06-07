@@ -1,0 +1,181 @@
+/* Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.container {
+  max-width: 1400px;
+  width: 100%;
+  background: rgba(15, 23, 42, 0.85);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+header, footer {
+  text-align: center;
+  padding: 20px 30px;
+  background: rgba(0, 0, 0, 0.3);
+  font-size: 0.9rem;
+  color: #94a3b8;
+}
+
+footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+h1 {
+  font-size: 3.5rem;
+  margin-bottom: 10px;
+  background: linear-gradient(to right, #ff9a9e, #fad0c4, #a1c4fd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.main-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  padding: 30px;
+}
+
+@media (max-width: 900px) {
+  .main-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+.panel {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.panel-title {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #818cf8;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.instrument-selector,
+.keyboard-container,
+.keyboard-guide,
+.beat-grid,
+.controls,
+.visualizer,
+.control-group,
+.track-info {
+  margin-bottom: 25px;
+}
+
+/* Bugfix: fixed overflowing beat-cells */
+.beat-grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 8px;
+}
+
+.beat-cell {
+  background: rgba(30, 41, 59, 0.7);
+  height: 80px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.beat-cell.active {
+  background: rgba(79, 70, 229, 0.8);
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(99, 102, 241, 0.7);
+}
+
+.beat-cell.active.drum { background: rgba(239, 68, 68, 0.8); }
+.beat-cell.active.snare { background: rgba(16, 185, 129, 0.8); }
+.beat-cell.active.hihat { background: rgba(245, 158, 11, 0.8); }
+
+.btn {
+  background: linear-gradient(to right, #6366f1, #8b5cf6);
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn-play { background: linear-gradient(to right, #10b981, #34d399); }
+.btn-stop { background: linear-gradient(to right, #ef4444, #f87171); }
+.btn-record { background: linear-gradient(to right, #ec4899, #f472b6); }
+
+/* Minor fix: better spacing and scroll behavior */
+.keyboard-container {
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+/* Additional elements to be included in future CSS as needed */
+
+.highlight {
+  color: #818cf8;
+  font-weight: bold;
+}
+
+.pulse {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #ef4444;
+  box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); }
+  70% { box-shadow: 0 0 0 10px rgba(239, 68, 68, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+}

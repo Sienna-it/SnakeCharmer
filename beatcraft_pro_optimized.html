@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BeatCraft Pro - Enhanced Music Maker</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>BeatCraft Pro</h1>
+      <p class="subtitle">Create your own music with this enhanced browser-based music maker. Play instruments, record beats, and compose your masterpiece!</p>
+    </header>
+    <main class="main-content">
+      <section class="panel">
+        <h2 class="panel-title"><i class="fas fa-sliders-h"></i> Controls & Instruments</h2>
+        <div class="instrument-selector"></div>
+        <h3 class="panel-title"><i class="fas fa-keyboard"></i> Playable Keyboard</h3>
+        <div class="keyboard-container"></div>
+        <div class="keyboard-guide"></div>
+        <h3 class="panel-title"><i class="fas fa-drum"></i> Beat Sequencer</h3>
+        <div class="beat-grid"></div>
+        <div class="controls">
+          <button class="btn btn-play" id="playBtn"><i class="fas fa-play"></i> Play</button>
+          <button class="btn btn-stop" id="stopBtn"><i class="fas fa-stop"></i> Stop</button>
+          <button class="btn btn-record" id="recordBtn"><i class="fas fa-record-vinyl"></i> Record</button>
+        </div>
+        <div class="recording-indicator" id="recIndicator">
+          <div class="pulse"></div>
+          <div>Recording in progress...</div>
+        </div>
+      </section>
+      <section class="panel">
+        <h2 class="panel-title"><i class="fas fa-waveform"></i> Audio Visualizer</h2>
+        <div class="visualizer">
+          <div class="visualizer-bars" id="visualizer"></div>
+        </div>
+        <div class="control-group">
+          <div class="control-title">Volume</div>
+          <input type="range" min="0" max="100" value="80" class="slider" id="volumeSlider">
+        </div>
+        <div class="control-group">
+          <div class="control-title">Tempo: <span id="tempoValue">120</span> BPM</div>
+          <input type="range" min="60" max="180" value="120" class="slider" id="tempoSlider">
+        </div>
+        <div class="control-group">
+          <div class="control-title">Reverb</div>
+          <input type="range" min="0" max="100" value="30" class="slider" id="reverbSlider">
+        </div>
+        <div class="track-info">
+          <div class="track-title">Current Track: <span id="trackTitle">Sunset Melody</span></div>
+          <div class="composer">
+            <i class="fas fa-user"></i>
+            Composer: <input type="text" value="Your Name" id="composerName">
+          </div>
+        </div>
+        <div class="controls">
+          <button class="btn"><i class="fas fa-save"></i> Save Project</button>
+          <button class="btn"><i class="fas fa-folder-open"></i> Load Project</button>
+          <button class="btn"><i class="fas fa-file-download"></i> Export MP3</button>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p>Made with <span class="highlight">♥</span> using Web Audio API | Now with 2 full octaves!</p>
+    </footer>
+  </div>
+</body>
+</html>
